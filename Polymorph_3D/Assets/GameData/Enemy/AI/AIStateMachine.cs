@@ -37,6 +37,7 @@ public class AIStateMachine : MonoBehaviour
     private bool _canAttack = true;
     private bool _isSeeking = false;
     private bool _isIdle = false;
+    private bool _isPatrolBehavior = false;
 
     [Header("AI Modules")]
     [SerializeField] private Enemy _enemyScript; 
@@ -89,7 +90,7 @@ public class AIStateMachine : MonoBehaviour
         switch (_currentState)
         {
             case AIState_e.PATROLLING:
-                _movementScript.Patrol();
+                Patrol();
                 break;
             case AIState_e.IDLE:
                 Idle();
@@ -116,6 +117,16 @@ public class AIStateMachine : MonoBehaviour
     private void DoDefaultBehaviors()
     {
         _playerDetector.PercieveSurroundings(); 
+    }
+
+    private void Patrol()
+    {
+        if (!_movementScript.Patrolling) _movementScript.Patrol();
+        if(_movementScript.AtTarget() && !_isPatrolBehavior)
+        {
+            _isPatrolBehavior = true;
+            StartCoroutine(PatrolRoutine());
+        }
     }
 
     private void Idle()
@@ -195,6 +206,32 @@ public class AIStateMachine : MonoBehaviour
         if (_hasAttack && _playerDetector.GetDistanceFromPlayer() <= ATTACK_DISTANCE && _canAttack) StartCoroutine(AttackRoutine());
         else if (_aiType == AIType_e.MOBILE && _playerDetector.GetDistanceFromPlayer() > ATTACK_DISTANCE) _movementScript.UpdateTarget(Player.Singleton.transform.position);
 
+    }
+
+    private IEnumerator PatrolRoutine()
+    {
+        PatrolNodeBehavior_t behavior = _movementScript.GetCurrentPatrolNode().GetBehavior();
+        Debug.Log("invoking patrol routine");
+
+        Debug.Log("Behavior String: " + behavior.ToString());
+       
+        if (behavior.LookAtDirection)
+        {
+
+            Debug.Log("Looking at direction");
+            _movementScript.SetDesiredRotation(behavior.Yaw);
+            yield return new WaitUntil(() => !_movementScript.Rotating);
+          
+        }
+
+        if (behavior.WaitAtNode)
+        {
+            _movementScript.Stop();
+            yield return new WaitForSeconds(behavior.WaitTime);
+        }
+
+        _movementScript.UpdatePatrolNode();
+        _isPatrolBehavior = false;
     }
 
     private IEnumerator IdleRoutine()

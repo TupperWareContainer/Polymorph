@@ -37,6 +37,8 @@ public class StationaryEnemyMovement : AIMovementScript
 
     public override bool Stopped { get => !MovingToTarget; }
 
+    public override bool Rotating { get => MovingToTarget; }
+
 
     private void Awake()
     {
@@ -120,12 +122,13 @@ public class StationaryEnemyMovement : AIMovementScript
             _hasPathToPatrolNode = true;
         }
 
-        if (AtTarget())
-        {
-            _hasPathToPatrolNode = false;
-            _currentPatrolNode++;
-            if (_currentPatrolNode >= _patrolNodes.Length) _currentPatrolNode = 0;
-        }
+        
+    }
+    public override void UpdatePatrolNode()
+    {
+        _hasPathToPatrolNode = false;
+        _currentPatrolNode++;
+        if (_currentPatrolNode >= _patrolNodes.Length) _currentPatrolNode = 0;
     }
 
     public override void Stop()
@@ -142,7 +145,11 @@ public class StationaryEnemyMovement : AIMovementScript
         _cLerpTime = 0f;
         _lerpTime = (_targetDirection - _startingDirection).magnitude / _angularSpeedDegrees; 
     }
-
+    public override EnemyPatrolNode GetCurrentPatrolNode()
+    {
+        if (!HasPatrolRoute) return null;
+        return _patrolNodes[_currentPatrolNode];
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

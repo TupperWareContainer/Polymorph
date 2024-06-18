@@ -7,6 +7,7 @@ public abstract class Enemy : MonoBehaviour
     [Header("Enemy Info")]
     [SerializeField] private string _name;
     [SerializeField] private float _health;
+    [SerializeField] private Transform _head;
 
     public float Health { get => _health;}
 
@@ -17,6 +18,8 @@ public abstract class Enemy : MonoBehaviour
     public virtual bool IsAttackBehavior { get => false; }
 
     public virtual bool IsIdleBehavior { get => false; }
+
+    public virtual Transform Head { get=> _head; set=> _head = value; }
 
 
     public abstract void ResetBehavior();

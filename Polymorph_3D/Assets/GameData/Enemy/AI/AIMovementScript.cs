@@ -11,6 +11,8 @@ public abstract class AIMovementScript : MonoBehaviour
 
     public abstract bool Stopped { get; }
 
+    public abstract bool Rotating { get; }
+
 
 
     public abstract void UpdateTarget(Vector3 pt);
@@ -26,6 +28,15 @@ public abstract class AIMovementScript : MonoBehaviour
     public abstract void Idle();
 
     public abstract bool AtDefaultPosition();
+
+    public abstract EnemyPatrolNode GetCurrentPatrolNode();
+
+    public abstract void UpdatePatrolNode();
+
+    public virtual void SetDesiredRotation(float yaw)
+    {
+        Debug.LogWarning($"{name} : WARNING : Function \"SetDesiredRotation\" has not been implimented on this behavior, was this a mistake?");
+    }
 
 
 }

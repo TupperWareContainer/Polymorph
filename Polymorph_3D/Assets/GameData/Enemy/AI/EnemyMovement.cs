@@ -22,16 +22,18 @@ public class EnemyMovement : AIMovementScript
     [SerializeField] private EnemyPatrolNode[] _patrolNodes;
     [SerializeField] private float _speed;             /// fallback speed if agent is null; 
     [SerializeField] private Vector3 _defaultPosition; /// the position the AI should return to after being moved;
-    [SerializeField] private bool _canMove; 
+    [SerializeField] private bool _canMove;
+
+    private bool _rotating;
 
     public override bool Patrolling { get => _patrolling;}
     public override bool HasPatrolRoute { get => _patrolNodes.Length > 0; }
 
     public override bool MovingToTarget { get => _agent.velocity.magnitude > 0; } 
 
-    public override bool Stopped { get => !MovingToTarget; }
+    public override bool Stopped { get => !MovingToTarget && !_rotating; }
+    public override bool Rotating { get => _rotating;}
 
-   
     private void Awake()
     {
         if (_agent == null) _agent = GetComponent<NavMeshAgent>();
@@ -83,19 +85,18 @@ public class EnemyMovement : AIMovementScript
         {
             UpdateTarget(_patrolNodes[_currentPatrolNode].transform.position);
             _hasPathToPatrolNode = true; 
-        }
-
-        if(AtTarget())
-        {
-            _hasPathToPatrolNode = false;
-            _currentPatrolNode++;
-            if (_currentPatrolNode >= _patrolNodes.Length) _currentPatrolNode = 0; 
-        }
-
-        
+        }        
     }
 
-    
+
+    public override void UpdatePatrolNode()
+    {
+        _hasPathToPatrolNode = false;
+        _currentPatrolNode++;
+        if (_currentPatrolNode >= _patrolNodes.Length) _currentPatrolNode = 0;
+        Patrol();
+    }
+
 
     public override void MoveToDefaultPosition()
     {
@@ -136,6 +137,40 @@ public class EnemyMovement : AIMovementScript
         }
 
 
+    }
+
+    public override void SetDesiredRotation(float yaw)
+    {
+        if(_rotating == false)
+        {
+            _rotating = true;
+            StartCoroutine(RotateRoutine(yaw));
+        }
+
+    }
+
+    private IEnumerator RotateRoutine(float yaw)
+    {
+        Quaternion rotation = Quaternion.Euler(0f,yaw,0f);
+
+        float lerpTimer = 0f;
+
+        Quaternion initialRotation = transform.rotation;
+
+        Debug.Log("rotating...");
+        while (!transform.rotation.Equals(rotation) && lerpTimer <=1f)
+        {
+            transform.rotation = Quaternion.Lerp(initialRotation,rotation,lerpTimer);
+            lerpTimer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        _rotating = false;
+    } 
+
+    public override EnemyPatrolNode GetCurrentPatrolNode()
+    {
+        if (!HasPatrolRoute) return null;
+        else return _patrolNodes[_currentPatrolNode];
     }
 
     public override bool AtDefaultPosition()

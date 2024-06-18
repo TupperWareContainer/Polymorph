@@ -867,7 +867,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 26850
+    surfaceParameter: 27090
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -892053301244471386
@@ -1788,7 +1788,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 26846
+    surfaceParameter: 27084
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 5972139978293134259
@@ -1813,7 +1813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &317895440
 Transform:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318784416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.4, y: -0.47, z: -27.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1875,6 +1875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f9d2bc98f6704e99f63e49909b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waitAtNode: 0
+  _lookAtDirection: 0
+  _waitTime: 0
+  _yawDirection: 0
 --- !u!43 &353111787
 Mesh:
   m_ObjectHideFlags: 0
@@ -2258,6 +2262,127 @@ MonoBehaviour:
     - EdgeIndices: 0e0000000f0000001000000011000000
       TexGenIndex: 4
     Generation: 3
+--- !u!1 &393499408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 393499409}
+  - component: {fileID: 393499412}
+  - component: {fileID: 393499411}
+  - component: {fileID: 393499410}
+  - component: {fileID: 393499413}
+  m_Layer: 0
+  m_Name: KoboldAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &393499409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393499408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.54, y: 1, z: -22.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1081962632}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &393499410
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393499408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &393499411
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393499408}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &393499412
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393499408}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!195 &393499413
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393499408}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &439328025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,7 +5043,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 26850
+    surfaceParameter: 27090
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -892053301244471386
@@ -4952,8 +5077,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684969388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: -0.47, z: -14.54}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.4, y: 1.176, z: -14.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4972,6 +5097,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f9d2bc98f6704e99f63e49909b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waitAtNode: 0
+  _lookAtDirection: 0
+  _waitTime: 0
+  _yawDirection: 0
 --- !u!1 &724697009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5881,7 +6010,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 26846
+    surfaceParameter: 27084
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -892053301244471386
@@ -6227,7 +6356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1038130573
 Transform:
   m_ObjectHideFlags: 0
@@ -6308,6 +6437,7 @@ Transform:
   - {fileID: 2043216418}
   - {fileID: 1738912111}
   - {fileID: 1038035963234687081}
+  - {fileID: 393499409}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6596,7 +6726,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094858234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -11.4, y: 2, z: -14.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6616,6 +6746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f9d2bc98f6704e99f63e49909b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waitAtNode: 1
+  _lookAtDirection: 1
+  _waitTime: 2
+  _yawDirection: -90
 --- !u!1 &1111990610
 GameObject:
   m_ObjectHideFlags: 0
@@ -11685,7 +11819,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551316559}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.4, y: 2, z: -27.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11705,6 +11839,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f9d2bc98f6704e99f63e49909b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waitAtNode: 0
+  _lookAtDirection: 0
+  _waitTime: 0
+  _yawDirection: 0
 --- !u!1 &1617998291
 GameObject:
   m_ObjectHideFlags: 16
@@ -11773,7 +11911,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 26850
+    surfaceParameter: 27090
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5972139978293134259
@@ -11851,7 +11989,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 26850
+    surfaceParameter: 27090
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5972139978293134259
@@ -16933,6 +17071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AllSeeingEyeMobile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533203874299451232, guid: c5fb230b0fae5e64bb0c8ed048a367a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7533203874299451236, guid: c5fb230b0fae5e64bb0c8ed048a367a6,
         type: 3}

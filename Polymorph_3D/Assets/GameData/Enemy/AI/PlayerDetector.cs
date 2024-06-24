@@ -24,7 +24,7 @@ public class PlayerDetector : MonoBehaviour
     [SerializeField] private bool _useTriggerVolume; /// if true, overrides the procedurally generated fov cone with a specified volume
     [SerializeField] private AIDetectionVolume _detectionVolume; 
 
-    [Header("Detection Logic Settings")]
+    [Header("Sight Detection Settings")]
     [SerializeField] private float _slowDetectionDistance;
     [SerializeField] private float _normalDetectionDistance;
     [SerializeField] private float _instantDetectionDistance;
@@ -32,7 +32,13 @@ public class PlayerDetector : MonoBehaviour
     [SerializeField] private float _normalDetectionRate;
     [SerializeField] private float _detectionGracePeriod; /// time in which the player can break LOS without triggering the alert state
 
+    [Header("Sound Detection Settings")]
+    [SerializeField] private bool _deaf = true;
+    [SerializeField] private LayerMask _soundSourceLayer;
+    [SerializeField] private int _maxSoundSources;
+    [SerializeField] private float _hearingRadius;
 
+    
 
     [Header("Detector Info")]
     [SerializeField] private float _suspicionLevel;
@@ -84,6 +90,11 @@ public class PlayerDetector : MonoBehaviour
 
         float oldSuspicionLevel = _suspicionLevel;
 
+        float detectionModifier = 1f;
+
+        if (Player.Singleton.Concealed) detectionModifier -= Player.Singleton.ConcealedDetectionModifier;
+        if (Player.Singleton.Crouched) detectionModifier -= Player.Singleton.CrouchedDetectionModifier;
+
 
         if (_instantDetectionDistance >= 0 && distance < _instantDetectionDistance)
         {
@@ -91,11 +102,11 @@ public class PlayerDetector : MonoBehaviour
         }
         else if (_normalDetectionDistance >= 0 && distance < _normalDetectionDistance)
         {
-            _suspicionLevel += _normalDetectionRate * Time.deltaTime;
+            _suspicionLevel += _normalDetectionRate * Time.deltaTime * detectionModifier;
         }
         else if (_slowDetectionDistance >= 0 && distance < _slowDetectionDistance)
         {
-            _suspicionLevel += _slowDetectionRate * Time.deltaTime; 
+            _suspicionLevel += _slowDetectionRate * Time.deltaTime * detectionModifier; 
         }
 
         _suspicionLevel = Mathf.Clamp(_suspicionLevel, _minSuspicion, _maxSuspicion);
@@ -115,13 +126,19 @@ public class PlayerDetector : MonoBehaviour
 
     public void PercieveSurroundings()
     {
-        if (CanPerceivePlayer())
+        if (CanSeePlayer())
         {
             RaiseSuspicionLevel();
             _lastKnownPActivityPos = Player.Singleton.transform.position;
         }
+        else if (!_deaf && CanHearPlayerActivity(out _lastKnownPActivityPos))
+        {
+            Debug.Log($"{name} heard suspicious sound, setting suspicion level to suspicious");
+            _suspicionLevel = Mathf.Max(_maxSuspicion * _suspicionThresholdPercentage, _suspicionLevel);
+        }
         else if(CanDecaySuspicion && _suspicionLevel > _minSuspicion)
         {
+            Debug.Log("Decaying suspicion");
             DecaySuspicion(); 
         }
     }
@@ -185,6 +202,76 @@ public class PlayerDetector : MonoBehaviour
         SuspicionPerSecond = (_suspicionLevel - oldSuspicionLevel) * (1 / Time.deltaTime);
 
     }
+    public bool CanHearPlayerActivity(out Vector3 soundPosition)
+    {
+        /// Check for sound sources in hearing range
+        Collider[] colliders = new Collider[_maxSoundSources];
+
+        if (Physics.OverlapSphereNonAlloc(transform.position, _hearingRadius, colliders, _soundSourceLayer) <= 0)
+        {
+            soundPosition = _lastKnownPActivityPos;
+            return false;
+        }
+
+        float smallestSqrDist = float.MaxValue;
+        int smallestSqrDistIndex = -1;
+        
+        /// run through list of sound sources found within range and determine if they are valid sound sources
+        /// valid sound sources are sources that are currently playing sound and have a sound source object attatched to them
+
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i] == null) continue;
+            float distance = (transform.position - colliders[i].transform.position).sqrMagnitude;
+            SoundSource src = colliders[i].GetComponent<SoundSource>();
+
+            if(src != null && src.Playing && distance < smallestSqrDist)
+            {
+                smallestSqrDist = distance;
+                smallestSqrDistIndex = i; 
+            }
+        }
+        if(smallestSqrDistIndex == -1)
+        {
+            soundPosition = _lastKnownPActivityPos;
+            return false; 
+        }
+        soundPosition = colliders[smallestSqrDistIndex].transform.position;
+        return true;
+    }
+    public bool CanHearPlayerActivity()
+    {
+        /// Check for sound sources in hearing range
+        Collider[] colliders = new Collider[_maxSoundSources];
+
+        if (Physics.OverlapSphereNonAlloc(transform.position, _hearingRadius, colliders, _soundSourceLayer) < 0)
+        {
+            return false;
+        }
+
+        float smallestSqrDist = float.MaxValue;
+        int smallestSqrDistIndex = -1;
+
+        /// run through list of sound sources found within range and determine if they are valid sound sources
+        /// valid sound sources are sources that are currently playing sound and have a sound source object attatched to them
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            float distance = (transform.position - colliders[i].transform.position).sqrMagnitude;
+            SoundSource src = colliders[i].GetComponent<SoundSource>();
+
+            if (src != null && src.Playing && distance < smallestSqrDist)
+            {
+                smallestSqrDist = distance;
+                smallestSqrDistIndex = i;
+            }
+        }
+        if (smallestSqrDistIndex == -1)
+        {
+            return false;
+        }
+        return true;
+    }
 
     public bool CanSeePlayer()
     {
@@ -227,7 +314,8 @@ public class PlayerDetector : MonoBehaviour
 
     public bool CanPerceivePlayer()
     {
-        return CanSeePlayer(); //possibly include support for sound-based detection
+        if (_deaf) return CanSeePlayer(); 
+        else return CanSeePlayer() || CanHearPlayerActivity();
     }
 
     public float GetDistanceFromPlayer()
@@ -356,6 +444,16 @@ public class PlayerDetector : MonoBehaviour
         
     }
 
+    private void DrawHearingRadius()
+    {
+        Gizmos.matrix = transform.localToWorldMatrix;
+
+        Gizmos.color = Color.cyan;
+
+        Gizmos.DrawWireSphere(Vector3.zero, _hearingRadius);
+
+        Gizmos.matrix = Matrix4x4.identity;
+    }
     /// <summary>
     /// returns a point projected across a line with a initial direction. This line is then rotated with a given rotation;
     /// </summary>
@@ -376,13 +474,17 @@ public class PlayerDetector : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (_drawGizmosNotSelected) return;
+
         if (!_useTriggerVolume) DrawFOVCone();
         else DrawDetectionDistances();
+        DrawHearingRadius();
     }
     private void OnDrawGizmos()
     {
         if (!_drawGizmosNotSelected) return;
+
         if (!_useTriggerVolume) DrawFOVCone();
         else DrawDetectionDistances();
+        DrawHearingRadius();
     }
 }

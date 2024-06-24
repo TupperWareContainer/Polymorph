@@ -1,0 +1,8 @@
+Ideas for certain dagger behaviors
+1. Lure
+	- Player holds dagger to mouth and blows a hitscan "blowdart"
+	- This blowdart does not deal any damage, but creates a sound that lures enemies when it impacts a surface
+	- The blowdart can stun enemies if they are hit in the eyes
+2. Teleport
+	- Player throws knife to location they want to teleport to 
+	- Player teleports to location (if valid) or nearest valid location within their fov

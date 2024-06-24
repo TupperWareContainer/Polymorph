@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class DaggerBehavior : ScriptableObject
 {
-    public abstract void Invoke();
+    public abstract float Cooldown { get;  }
+    public abstract void Invoke(Vector3 forward);
+
 
 }

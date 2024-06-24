@@ -18,6 +18,12 @@ public class Player : MonoBehaviour
 
     public bool Crouched;
 
+    public bool Concealed;
+
+    public float ConcealedDetectionModifier = 0.25f;
+
+    public float CrouchedDetectionModifier = 0.5f; 
+
 
 
     private void Awake()
@@ -30,6 +36,21 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Attempted to assign value to pre-exsisting singleton, disposing...");
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ConcealmentArea"))
+        {
+            Concealed = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("ConcealmentArea"))
+        {
+            Concealed = false;
         }
     }
 

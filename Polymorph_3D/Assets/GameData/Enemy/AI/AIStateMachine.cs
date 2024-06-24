@@ -33,7 +33,7 @@ public class AIStateMachine : MonoBehaviour
     [SerializeField] private bool _hasAttack = true;
 
     private bool _doFinishInvestigation;
-    private bool _finishingInvestigation;
+    [SerializeField] private bool _finishingInvestigation;
     private bool _canAttack = true;
     private bool _isSeeking = false;
     private bool _isIdle = false;
@@ -54,7 +54,6 @@ public class AIStateMachine : MonoBehaviour
 
     private void UpdateState()
     {
-       
         switch (_playerDetector.SuspicionState)
         {
             default:
@@ -86,6 +85,7 @@ public class AIStateMachine : MonoBehaviour
 
     private void AILogic()
     {
+
         DoDefaultBehaviors();
         switch (_currentState)
         {
@@ -133,7 +133,7 @@ public class AIStateMachine : MonoBehaviour
     {
         if (!_isIdle)
         {
-            Debug.Log($"{name} is running idle state");
+            //Debug.Log($"{name} is running idle state");
             _isIdle = true;
             StartCoroutine(IdleRoutine());
         }
@@ -236,7 +236,7 @@ public class AIStateMachine : MonoBehaviour
 
     private IEnumerator IdleRoutine()
     {
-        Debug.Log($"{name} is running idle routine");
+       // Debug.Log($"{name} is running idle routine");
 
         _movementScript.Idle();
 
@@ -263,6 +263,7 @@ public class AIStateMachine : MonoBehaviour
 
         while (!_movementScript.AtTarget())
         {
+            Debug.Log("Moving towards target with investigation routine");
             _movementScript.UpdateTarget(_playerDetector.LastKnownPActivityPos);
             yield return new WaitForFixedUpdate();
         }
@@ -289,10 +290,13 @@ public class AIStateMachine : MonoBehaviour
         _finishingInvestigation = true;
 
         float baseSuspicion = _playerDetector.SuspicionLevel;
+       // Debug.Log($"{name} is attempting to move to default position");
+
         _movementScript.MoveToDefaultPosition();
 
         while (!_movementScript.AtTarget())
         {
+            Debug.Log($"{name} is attempting to move to default position");
             if (_playerDetector.SuspicionPerSecond > 0)       /// if the enemy gains any suspicion while moving back towards the default point, enable investigation mode
             {
                 Debug.Log($"{name} gained suspicion while it was moving back towards default position, {name} is allowed to investigate");
@@ -305,6 +309,7 @@ public class AIStateMachine : MonoBehaviour
 
         _finishingInvestigation = false;
         _doFinishInvestigation = false;
+        Debug.Log($"{name} has finished investigation");
     }
 
     /// <summary>

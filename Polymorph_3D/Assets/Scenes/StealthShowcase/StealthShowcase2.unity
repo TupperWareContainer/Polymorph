@@ -212,13 +212,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25864025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 7.48}
   m_LocalScale: {x: 2.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1656606149}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &49961155
 GameObject:
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49961156}
   - component: {fileID: 49961157}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119319228
 GameObject:
@@ -689,7 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 119319229}
   - component: {fileID: 119319230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -908,7 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163758721}
   - component: {fileID: 163758722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194781862}
   - component: {fileID: 194781863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200131695}
   - component: {fileID: 200131696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1857,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231619481
 GameObject:
@@ -1869,7 +1869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231619482}
   - component: {fileID: 231619483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2252,7 +2252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266065870}
   - component: {fileID: 266065871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2470,7 +2470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275502614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2509,7 +2509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358808891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Masoleums
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2546,7 +2546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371182310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,6 +2573,96 @@ Transform:
   m_Father: {fileID: 275502614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &478433841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1671459576}
+    m_Modifications:
+    - target: {fileID: 4984140276125116832, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: _patrolNodes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116832, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: _patrolNodes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1332367342}
+    - target: {fileID: 4984140276125116832, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: _patrolNodes.Array.data[1]
+      value: 
+      objectReference: {fileID: 969011141}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.985941
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984140276125116841, guid: f72d82b1ab07bd74587d9b1441075014,
+        type: 3}
+      propertyPath: m_Name
+      value: KoboldAI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f72d82b1ab07bd74587d9b1441075014, type: 3}
+--- !u!4 &478433842 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4984140276125116840, guid: f72d82b1ab07bd74587d9b1441075014,
+    type: 3}
+  m_PrefabInstance: {fileID: 478433841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &530498337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,7 +2673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530498338}
   - component: {fileID: 530498339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2844,7 +2934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555189445}
   - component: {fileID: 555189446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3105,7 +3195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612987015}
   - component: {fileID: 612987016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3366,7 +3456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621606151}
   - component: {fileID: 621606152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3626,7 +3716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 644037475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Key Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3665,7 +3755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682581165}
   - component: {fileID: 682581166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3884,7 +3974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 732245177}
   - component: {fileID: 732245178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4309,7 +4399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774813647}
   - component: {fileID: 774813648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4696,13 +4786,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855474427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 23}
   m_LocalScale: {x: 4, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1656606149}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871056655
 GameObject:
@@ -4714,7 +4804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871056656}
   - component: {fileID: 871056657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4932,7 +5022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 882153214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5141,7 +5231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 912019940}
   - component: {fileID: 912019941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5361,7 +5451,8 @@ GameObject:
   - component: {fileID: 924808188}
   - component: {fileID: 924808187}
   - component: {fileID: 924808186}
-  m_Layer: 0
+  - component: {fileID: 924808189}
+  m_Layer: 6
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5441,6 +5532,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924808189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924808185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 1479372276
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 044354457f26e154bb3454015ccd24b0, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &926517529
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,7 +5572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926517530}
   - component: {fileID: 926517531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5876,7 +5997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967462426}
   - component: {fileID: 967462427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6109,13 +6230,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969011136}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 16, y: 1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 991933041}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &969011141
 MonoBehaviour:
@@ -6133,6 +6254,39 @@ MonoBehaviour:
   _lookAtDirection: 1
   _waitTime: 10
   _yawDirection: -90
+--- !u!1 &991933040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991933041}
+  m_Layer: 0
+  m_Name: Patrol Nodes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &991933041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991933040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 969011140}
+  - {fileID: 1332367341}
+  m_Father: {fileID: 1671459576}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000280315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6143,7 +6297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000280316}
   - component: {fileID: 1000280317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6362,7 +6516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004709117}
   - component: {fileID: 1004709118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7144,7 +7298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1006809893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7379,7 +7533,7 @@ Transform:
   - {fileID: 1022881081}
   - {fileID: 85726044}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060247085
 GameObject:
@@ -7391,7 +7545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060247086}
   - component: {fileID: 1060247087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: '[generated-meshes]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7508,7 +7662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1068783077}
   - component: {fileID: 1068783078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7727,7 +7881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1070439855}
   - component: {fileID: 1070439856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7946,7 +8100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1070873731}
   - component: {fileID: 1070873732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8165,7 +8319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1101109424}
   - component: {fileID: 1101109425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8948,7 +9102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108235826}
   - component: {fileID: 1108235827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9167,7 +9321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120310965}
   - component: {fileID: 1120310966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9386,7 +9540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1128056017}
   - component: {fileID: 1128056018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9684,13 +9838,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133954836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1656606149}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136871046
 GameObject:
@@ -9702,7 +9856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136871047}
   - component: {fileID: 1136871048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9921,7 +10075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138867955}
   - component: {fileID: 1138867956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10182,7 +10336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184973152}
   - component: {fileID: 1184973153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10401,7 +10555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231477733}
   - component: {fileID: 1231477734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11348,7 +11502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280066813}
   - component: {fileID: 1280066814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12133,7 +12287,7 @@ GameObject:
   - component: {fileID: 1296295533}
   - component: {fileID: 1296295532}
   - component: {fileID: 1296295531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: '[generated-render-mesh]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12226,7 +12380,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 27084
+    surfaceParameter: 27028
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 3333004963490339063
@@ -12245,7 +12399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307047427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12282,7 +12436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1308682607}
   - component: {fileID: 1308682608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12557,13 +12711,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332367337}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 33, y: 1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 991933041}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1332367342
 MonoBehaviour:
@@ -12591,7 +12745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354508013}
   - component: {fileID: 1354508014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13374,7 +13528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372205141}
   - component: {fileID: 1372205142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13593,7 +13747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383749252}
   - component: {fileID: 1383749253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13812,7 +13966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1399418358}
   - component: {fileID: 1399418359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14030,7 +14184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1399824888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14067,7 +14221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418553249}
   - component: {fileID: 1418553250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14286,7 +14440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425873803}
   - component: {fileID: 1425873804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14505,7 +14659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426105577}
   - component: {fileID: 1426105578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14864,7 +15018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465818757}
   - component: {fileID: 1465818758}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15083,7 +15237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524939427}
   - component: {fileID: 1524939428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15515,7 +15669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1554301565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15551,7 +15705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1564953052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15588,7 +15742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580498259}
   - component: {fileID: 1580498260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15807,7 +15961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609358258}
   - component: {fileID: 1609358259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16058,6 +16212,40 @@ MonoBehaviour:
     - EdgeIndices: 07000000060000000500000004000000
       TexGenIndex: 5
     Generation: 2
+--- !u!1 &1656606148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656606149}
+  m_Layer: 0
+  m_Name: Props
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1656606149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656606148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1133954840}
+  - {fileID: 25864029}
+  - {fileID: 855474431}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664671747
 GameObject:
   m_ObjectHideFlags: 0
@@ -16068,7 +16256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664671748}
   - component: {fileID: 1664671749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16329,7 +16517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1669808114}
   - component: {fileID: 1669808115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16538,6 +16726,39 @@ MonoBehaviour:
     - EdgeIndices: 0e0000000f0000001000000011000000
       TexGenIndex: 4
     Generation: 4
+--- !u!1 &1671459575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671459576}
+  m_Layer: 0
+  m_Name: AI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1671459576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671459575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 478433842}
+  - {fileID: 991933041}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1689841883
 GameObject:
   m_ObjectHideFlags: 17
@@ -16604,7 +16825,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720277277
 GameObject:
@@ -16616,7 +16837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720277278}
   - component: {fileID: 1720277279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17041,7 +17262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768946820}
   - component: {fileID: 1768946821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17260,7 +17481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770704544}
   - component: {fileID: 1770704545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17521,7 +17742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1785113353}
   - component: {fileID: 1785113354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17782,7 +18003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820545461}
   - component: {fileID: 1820545462}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18001,7 +18222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1844420273}
   - component: {fileID: 1844420274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18219,7 +18440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1848544398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18259,7 +18480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1857442926}
   - component: {fileID: 1857442927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19042,7 +19263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1865754143}
   - component: {fileID: 1865754144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19303,7 +19524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869797081}
   - component: {fileID: 1869797082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20086,7 +20307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1884132534}
   - component: {fileID: 1884132535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20347,7 +20568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885333293}
   - component: {fileID: 1885333294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20566,7 +20787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921384734}
   - component: {fileID: 1921384735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20784,7 +21005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1932863682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20821,7 +21042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1981331987}
   - component: {fileID: 1981331988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21082,7 +21303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2031846348}
   - component: {fileID: 2031846349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21865,7 +22086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2082620539}
   - component: {fileID: 2082620540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22127,7 +22348,7 @@ GameObject:
   - component: {fileID: 2124859660}
   - component: {fileID: 2124859662}
   - component: {fileID: 2124859661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: '[generated-collider-mesh]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22184,7 +22405,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 27090
+    surfaceParameter: 27032
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 3333004963490339063
@@ -22204,7 +22425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136467366}
   - component: {fileID: 2136467365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: '*hidden infinite brush*'
   m_TagString: Untagged
   m_Icon: {fileID: 0}

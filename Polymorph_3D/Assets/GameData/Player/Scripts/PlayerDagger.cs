@@ -28,6 +28,7 @@ public class PlayerDagger : WeaponScript
 
     [Header("Input Info")]
     [SerializeField] private bool _attackButtonPressed;
+    [SerializeField] private bool _altButtonPressed;
 
 
 
@@ -43,11 +44,13 @@ public class PlayerDagger : WeaponScript
     private void QueuePlayerInput()
     {
         _attackButtonPressed = Input.GetButtonDown("Fire");
+        _altButtonPressed = Input.GetButtonDown("Alt Fire");
     }
 
     private void UpdateDaggerState()
     {
         if (_attackButtonPressed) _cKnifeState = KnifeState_e.ATTACKING;
+        else if (_altButtonPressed) _cKnifeState = KnifeState_e.FUNC1; 
         else _cKnifeState = KnifeState_e.IDLE; 
     }
 
@@ -56,6 +59,9 @@ public class PlayerDagger : WeaponScript
         switch (_cKnifeState)
         {
             default:
+            case KnifeState_e.FUNC1:
+
+                break;
             case KnifeState_e.IDLE:
                 if (CheckIfBackstab()) _daggerAnimator.SetBool("CanBackstab", true);
                 else _daggerAnimator.SetBool("CanBackstab", false);
@@ -98,6 +104,11 @@ public class PlayerDagger : WeaponScript
         }
         _daggerAnimator.SetTrigger("Attack");
 
+
+    }
+
+    private void InvokeDaggerBehavior()
+    {
 
     }
 

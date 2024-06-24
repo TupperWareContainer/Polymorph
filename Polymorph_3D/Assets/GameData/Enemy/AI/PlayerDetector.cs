@@ -134,7 +134,7 @@ public class PlayerDetector : MonoBehaviour
         else if (!_deaf && CanHearPlayerActivity(out _lastKnownPActivityPos))
         {
             //Debug.Log($"{name} heard suspicious sound, setting suspicion level to suspicious");
-            _suspicionLevel = Mathf.Max(_maxSuspicion * _suspicionThresholdPercentage, _suspicionLevel);
+            _suspicionLevel = Mathf.Max(_maxSuspicion * _suspicionThresholdPercentage + _detectionDecayRate, _suspicionLevel);
         }
         else if(CanDecaySuspicion && _suspicionLevel > _minSuspicion)
         {
@@ -223,6 +223,7 @@ public class PlayerDetector : MonoBehaviour
         {
             if (colliders[i] == null) continue;
             float distance = (transform.position - colliders[i].transform.position).sqrMagnitude;
+            distance = Mathf.Abs(distance);
             SoundSource src = colliders[i].GetComponent<SoundSource>();
 
             if(src != null && src.Playing && distance < smallestSqrDist)

@@ -99,7 +99,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 759
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   _mLock: 1
   _ignore:
     serializedVersion: 2
-    m_Bits: 776
+    m_Bits: 264
   _sprintingMovementSpeed: 7
   _walkingMovementSpeed: 5
   _crouchSpeed: 3

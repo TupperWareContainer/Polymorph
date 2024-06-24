@@ -8,6 +8,7 @@ public class SoundSource : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [Header("Preferences")]
     [SerializeField] private bool _destroyOnFinish;
+    [SerializeField] private float _destroyDelay;
     public bool Playing { get => _audioSource.isPlaying; }
 
 
@@ -23,6 +24,7 @@ public class SoundSource : MonoBehaviour
     {
         yield return new WaitUntil(() => _audioSource.isPlaying);
         yield return new WaitUntil(() => !_audioSource.isPlaying);
+        yield return new WaitForSeconds(_destroyDelay);
         Destroy(gameObject);
     }
     public void Play() => _audioSource.Play();

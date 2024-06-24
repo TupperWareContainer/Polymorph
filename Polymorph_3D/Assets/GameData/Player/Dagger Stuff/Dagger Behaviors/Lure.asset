@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fe69d089fccbd4f9a4d26b19ffe4b6, type: 3}
+  m_Name: Lure
+  m_EditorClassIdentifier: 
+  _lure: {fileID: 5345328315420303913, guid: 1240670020b52b342aae65ba8c91bb3e, type: 3}
+  _cooldownTime: 1
+  _maxLureDistance: 100
+  _targetable:
+    serializedVersion: 2
+    m_Bits: 64

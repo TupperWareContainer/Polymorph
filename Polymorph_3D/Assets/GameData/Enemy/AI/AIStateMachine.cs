@@ -263,7 +263,7 @@ public class AIStateMachine : MonoBehaviour
 
         while (!_movementScript.AtTarget())
         {
-            Debug.Log("Moving towards target with investigation routine");
+           // Debug.Log("Moving towards target with investigation routine");
             _movementScript.UpdateTarget(_playerDetector.LastKnownPActivityPos);
             yield return new WaitForFixedUpdate();
         }
@@ -296,7 +296,7 @@ public class AIStateMachine : MonoBehaviour
 
         while (!_movementScript.AtTarget())
         {
-            Debug.Log($"{name} is attempting to move to default position");
+            //Debug.Log($"{name} is attempting to move to default position");
             if (_playerDetector.SuspicionPerSecond > 0)       /// if the enemy gains any suspicion while moving back towards the default point, enable investigation mode
             {
                 Debug.Log($"{name} gained suspicion while it was moving back towards default position, {name} is allowed to investigate");

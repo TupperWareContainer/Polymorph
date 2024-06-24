@@ -24,14 +24,23 @@ public class PlayerDagger : WeaponScript
     [SerializeField] private KnifeState_e _cKnifeState;
     [SerializeField] private float _daggerRange;
     [SerializeField] private float _daggerDamage;
-    [SerializeField] private List<DaggerBehavior> _daggerBehaviors;  
+    [SerializeField] private DaggerBehavior _equippedBehavior;
+    [SerializeField] private List<DaggerBehavior> _daggerBehaviors;
+    [SerializeField] private bool _isDaggerCooldown;
+    [SerializeField] private bool _isDaggerBehavior;
 
     [Header("Input Info")]
     [SerializeField] private bool _attackButtonPressed;
     [SerializeField] private bool _altButtonPressed;
 
 
-
+    private void Awake()
+    {
+        if(_equippedBehavior == null && _daggerBehaviors[0] != null)
+        {
+            _equippedBehavior = _daggerBehaviors[0];
+        }
+    }
 
     private void Update()
     {
@@ -60,7 +69,7 @@ public class PlayerDagger : WeaponScript
         {
             default:
             case KnifeState_e.FUNC1:
-
+                InvokeDaggerBehavior();
                 break;
             case KnifeState_e.IDLE:
                 if (CheckIfBackstab()) _daggerAnimator.SetBool("CanBackstab", true);
@@ -109,10 +118,20 @@ public class PlayerDagger : WeaponScript
 
     private void InvokeDaggerBehavior()
     {
-
+       if(!_isDaggerCooldown && _equippedBehavior != null)
+       {
+            Debug.Log("Invoking equipped dagger behavior");
+            _equippedBehavior.Invoke(_attackInstPoint.forward, _attackInstPoint.position);
+            _isDaggerCooldown = true;
+            Invoke(nameof(ResetDaggerCooldown), _equippedBehavior.Cooldown);
+       }
     }
 
 
+    private void ResetDaggerCooldown()
+    {
+        _isDaggerCooldown = false;
+    }
 
 
 

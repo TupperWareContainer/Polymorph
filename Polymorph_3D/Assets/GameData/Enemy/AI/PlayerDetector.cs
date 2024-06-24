@@ -133,12 +133,12 @@ public class PlayerDetector : MonoBehaviour
         }
         else if (!_deaf && CanHearPlayerActivity(out _lastKnownPActivityPos))
         {
-            Debug.Log($"{name} heard suspicious sound, setting suspicion level to suspicious");
+            //Debug.Log($"{name} heard suspicious sound, setting suspicion level to suspicious");
             _suspicionLevel = Mathf.Max(_maxSuspicion * _suspicionThresholdPercentage, _suspicionLevel);
         }
         else if(CanDecaySuspicion && _suspicionLevel > _minSuspicion)
         {
-            Debug.Log("Decaying suspicion");
+            //Debug.Log("Decaying suspicion");
             DecaySuspicion(); 
         }
     }
